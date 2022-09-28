@@ -1,0 +1,24 @@
+.widget-calendarwidget-clickable {
+    cursor: pointer;
+}
+
+.widget-calendarwidget {
+    display: inline-block;
+}
+
+.widget-calendarwidget.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-calendarwidget.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-calendarwidget.badge {
+    min-width: 18px;
+    min-height: 18px;
+}
