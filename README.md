@@ -33,10 +33,12 @@ yo @mendix/widget CalendarWidget
 ? Add End-to-end tests for the widget ? (recommended for Full Boilerplate) No
 
 # 第二步 安装依赖
-
+```cmd
+npm i
+```
 
 # 第三步 创建测试应用
-
+![](img/%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE.png)
 # 第四步 设计组件API
 
 # 第五步 构建并在测试项目中使用本组件
