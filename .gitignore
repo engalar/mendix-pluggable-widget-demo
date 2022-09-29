@@ -16,5 +16,7 @@ mendixProject
 **/screenshot
 **/screenshot-results
 **/tests/testProject/deployment
+**/tests/testProject/*.mpr.lock
 **/tests/testProject/theme-cache
 **/artifacts
+**/tests/testProject/javasource/**/proxies
