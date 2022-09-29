@@ -1,25 +1,27 @@
-import { createElement, useCallback } from "react";
+import { DatePicker } from "antd";
+import { useCallback, createElement } from "react";
 
-import { BadgeSample } from "./components/BadgeSample";
 import "./ui/CalendarWidget.css";
+import "antd/dist/antd.css";
 
 export function CalendarWidget(props) {
-    const { calendarwidgetType, calendarwidgetValue, valueAttribute, onClickAction, style, bootstrapStyle } = props;
-    const onClickHandler = useCallback(() => {
-        if (onClickAction && onClickAction.canExecute) {
-            onClickAction.execute();
-        }
-    }, [onClickAction]);
+    const { valueAttribute, onClickAction, style } = props;
+    const onClickHandler = useCallback(
+        value => {
+            valueAttribute.setValue(value.toDate());
+            if (onClickAction && onClickAction.canExecute) {
+                onClickAction.execute();
+            }
+        },
+        [onClickAction]
+    );
 
     return (
-        <BadgeSample
-            type={calendarwidgetType}
-            bootstrapStyle={bootstrapStyle}
+        <DatePicker
+            value={valueAttribute ? valueAttribute.rawValue : undefined}
+            onChange={onClickHandler}
             className={props.class}
-            clickable={!!onClickAction}
-            defaultValue={calendarwidgetValue ? calendarwidgetValue : ""}
-            onClickAction={onClickHandler}
             style={style}
-            value={valueAttribute ? valueAttribute.displayValue : ""} />
+        ></DatePicker>
     );
 }
